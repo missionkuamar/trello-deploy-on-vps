@@ -86,7 +86,7 @@ export default function Register() {
         toast.error(res.data?.message || "Registration Failed");
       }
     } catch (error) {
-      console.error(error);
+      // console.error(error);
 
       toast.error(
         error.response?.data?.message ||

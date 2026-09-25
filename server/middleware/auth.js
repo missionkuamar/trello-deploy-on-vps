@@ -115,7 +115,7 @@ export const isOwner = (model) => {
       if (!resource) {
         return res.status(404).json({ 
           success: false, 
-          message: 'Resource not found' 
+         // message: 'Resource not found' 
         });
       }
 

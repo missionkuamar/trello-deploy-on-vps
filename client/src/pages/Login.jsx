@@ -53,12 +53,12 @@ export default function Login() {
     try {
       setLoading(true);
 
-      console.log("API URL:", api.defaults.baseURL);
+      // console.log("API URL:", api.defaults.baseURL);
 
       const res = await api.post("/auth/login", input);
 
-      console.log("Response:", res);
-      console.log("Response Data:", res.data);
+      // console.log("Response:", res);
+      // console.log("Response Data:", res.data);
 
       if (res.data?.success) {
         dispatch(
@@ -80,7 +80,7 @@ export default function Login() {
         toast.error(res.data?.message || "Login failed");
       }
     } catch (error) {
-      console.error(error);
+      // console.error(error);
 
       toast.error(
         error.response?.data?.message ||

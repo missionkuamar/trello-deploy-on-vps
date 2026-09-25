@@ -23,6 +23,7 @@ const allowedOrigins = [
   'http://localhost:5173',
   'http://localhost:3000',
   'http://localhost:5000',
+  'http://localhost:5174',
   'http://127.0.0.1:5173',
   'http://127.0.0.1:3000',
   'https://trello-rnih.onrender.com',
@@ -68,11 +69,11 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-app.use(express.static(path.join(__dirname, "../client/dist")));
+// app.use(express.static(path.join(__dirname, "../client/dist")));
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/dist/index.html"));
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "../client/dist/index.html"));
+// });
 
 // ✅ 404 Handler for API routes only
 // app.use('/api/*', (req, res) => {
