@@ -1,0 +1,23 @@
+name: Deploy to VPS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Deploy latest code
+        run: |
+          cd /home/ubuntu/trello-deploy-on-vps
+
+          git fetch origin main
+          git reset --hard origin/main
+
+          docker compose build
+          docker compose up -d
+
+          docker compose ps
