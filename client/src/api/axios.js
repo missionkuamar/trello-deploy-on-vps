@@ -12,7 +12,9 @@ export const injectStore = (_store) => {
 //   ? '/api'  // In production, use relative path
 //   : 'api';
 //const API_BASE_URL = 'https://trello-rnih.onrender.com/api'
-const API_BASE_URL = 'http://localhost:5000/api'
+const API_BASE_URL =
+  import.meta.env.VITE_API_BASE_URL || '/api';
+
 const api = axios.create({
   baseURL: API_BASE_URL,
   headers: {
