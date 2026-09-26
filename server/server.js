@@ -26,10 +26,15 @@ const allowedOrigins = [
   'http://localhost:5174',
   'http://127.0.0.1:5173',
   'http://127.0.0.1:3000',
+
   'https://trello-rnih.onrender.com',
+
+  // Production
+  'https://invoicehub.fun',
+  'https://www.invoicehub.fun',
+
   process.env.CLIENT_URL
 ].filter(Boolean);
-
 const app = express();
 const PORT = process.env.PORT || 5000;
 
