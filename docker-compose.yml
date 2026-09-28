@@ -23,7 +23,7 @@ services:
     container_name: react-client
 
     ports:
-      - "5174:3000"
+      - "5173:3000"
 
     depends_on:
       - server
