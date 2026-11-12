@@ -100,7 +100,7 @@ export default function Login() {
     <div className="min-h-screen flex justify-center items-center">
       <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-md">
         <h2 className="text-3xl font-bold text-center mb-6">
-          Welcome Back
+          Welcome Back 
         </h2>
 
         <form onSubmit={handleSubmit} className="space-y-5">

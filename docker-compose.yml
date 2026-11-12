@@ -4,7 +4,7 @@ services:
 
   server:
     build: ./server
-    container_name: express-server
+    container_name: trello-server
 
     ports:
       - "5000:5000"
@@ -15,12 +15,12 @@ services:
     restart: unless-stopped
 
     networks:
-      - fullstack-net
+      - trello-net
 
 
   client:
     build: ./client
-    container_name: react-client
+    container_name: trello-client
 
     ports:
       - "5173:3000"
@@ -31,9 +31,10 @@ services:
     restart: unless-stopped
 
     networks:
-      - fullstack-net
-
+      - trello-net
+   
+   
 
 networks:
-  fullstack-net:
+  trello-net:
     driver: bridge

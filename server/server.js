@@ -13,8 +13,8 @@ import boardRoutes from './routes/boardRoutes.js';
 dotenv.config();
 
 // ✅ ES Module fix for __dirname
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
 
 // ✅ Load environment variables
 

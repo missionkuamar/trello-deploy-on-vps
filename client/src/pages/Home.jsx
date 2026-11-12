@@ -8,7 +8,7 @@ export default function Home() {
     <div className="min-h-[80vh] flex flex-col items-center justify-center text-center">
       <div className="max-w-3xl">
         <h1 className="text-5xl font-bold text-gray-900 mb-4">
-          📋 TaskFlow
+          📋 TaskFlow 
         </h1>
         <p className="text-xl text-gray-600 mb-8">
           A powerful Trello-style task management platform for teams and individuals.
