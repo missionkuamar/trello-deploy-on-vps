@@ -24,7 +24,7 @@ const allowedOrigins = [
   'http://localhost:3000',
   'http://localhost:5000',
   'http://localhost:5174',
-  'http://127.0.0.1:5173',
+ 'http://135.125.222.22:5173',
   'http://127.0.0.1:3000',
 
   'https://trello-rnih.onrender.com',
@@ -81,26 +81,26 @@ app.get('/api/health', (req, res) => {
 // });
 
 // ✅ 404 Handler for API routes only
-// app.use('/api/*', (req, res) => {
-//   res.status(404).json({
-//     success: false,
-//     message: `Route ${req.originalUrl} not found`,
-//   });
-// });
+app.use('/api/*', (req, res) => {
+  res.status(404).json({
+    success: false,
+    message: `Route ${req.originalUrl} not found`,
+  });
+});
 
 // ✅ Error Handler
-// app.use((err, req, res, next) => {
-//   console.error('❌ Error:', err.stack);
+app.use((err, req, res, next) => {
+  console.error('❌ Error:', err.stack);
   
-//   const status = err.status || 500;
-//   const message = err.message || 'Internal server error';
+  const status = err.status || 500;
+  const message = err.message || 'Internal server error';
   
-//   res.status(status).json({
-//     success: false,
-//     message,
-//     ...(process.env.NODE_ENV === 'development' && { stack: err.stack }),
-//   });
-// });
+  res.status(status).json({
+    success: false,
+    message,
+    ...(process.env.NODE_ENV === 'development' && { stack: err.stack }),
+  });
+});
 
 // ✅ Start Server
 app.listen(PORT, () => {
