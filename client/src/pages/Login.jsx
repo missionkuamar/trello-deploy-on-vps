@@ -10,7 +10,7 @@ import Loading from "../components/common/Loading";
 import toast from "react-hot-toast";
 import api from "../api/axios";
 
-export default function Login() {
+export default function   Login() {
   const [input, setInput] = useState({
     email: "",
     password: "",

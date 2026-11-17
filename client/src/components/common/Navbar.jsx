@@ -135,7 +135,7 @@ export default function Navbar() {
                                     to="/register"
                                     className="bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700"
                                 >
-                                    Register
+                                    Registerrrr
                                 </Link>
                             </div>
                         )}
