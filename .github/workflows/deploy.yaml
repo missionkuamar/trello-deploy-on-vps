@@ -1,17 +1,36 @@
 name: Deploy to VPS
+
 on:
   push:
     branches:
       - main
+
 jobs:
   deploy:
-    runs-on: self-hosted
+    runs-on: ubuntu-24.04
+
     steps:
-      - name: Deploy latest code
-        run: |
-          cd /home/ubuntu/trello-deploy-on-vps
-          git fetch origin main
-          git reset --hard origin/main
-          docker compose build
-          docker compose up -d
-          docker compose ps
+      - name: Deploy to VPS
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_PRIVATE_KEY }}
+          port: 20115
+          command_timeout: 30m
+          script: |
+            set -e
+
+            echo "Starting deployment..."
+
+            cd /home/ubuntu/trello-deploy-on-vps
+
+            git fetch origin main
+            git reset --hard origin/main
+
+            docker compose build
+            docker compose up -d
+
+            docker compose ps
+
+            echo "Deployment completed successfully!"
