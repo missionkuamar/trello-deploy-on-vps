@@ -1,331 +1,259 @@
-📋 TaskFlow - Complete Task Management System
-A full-featured task management application built with the MERN stack, featuring Trello-style boards, role-based access control, and real-time collaboration.
+Aap is pure code ko copy karein aur apni README.md file mein paste kar dein:
 
-✨ Features
-🎯 Core Features
-Trello-Style Kanban Board - Drag & drop task management
+markdown
+# 📋 TaskFlow - Trello-Style Task Management Platform
 
-Role-Based Access Control - Admin, Moderator, and User roles
+A powerful, collaborative task management platform designed for teams and individuals. Organize your workflow, track progress, and collaborate seamlessly using Kanban boards, role-based access control, file attachments, and detailed statistics.
 
-Task Management - Create, read, update, delete tasks
+## 🚀 Project Repository
+[GitHub Repo](https://github.com/missionkuamar/TaskFlow) *(Apna actual repository link yahan daalein)*
 
-Board Management - Create multiple boards with custom columns
+---
 
-User Management - Admin/Moderator can manage users
+## 📸 Screenshots
 
-Task Assignment - Assign tasks to team members
+### 🏠 Authentication & Landing Page
+<img src="public/home.png" alt="Home Page" width="800" />
+<img src="public/login.png" alt="Login Page" width="800" />
+<img src="public/register.png" alt="Register Page" width="800" />
 
-Comments & Attachments - Collaborate on tasks
+### 📊 User Dashboard & Boards
+<img src="public/dashboard.png" alt="User Dashboard" width="800" />
+<img src="public/boards.png" alt="My Boards" width="800" />
+<img src="public/kanban-board.png" alt="Kanban Board View" width="800" />
 
-Search & Filter - Find tasks quickly
+### 📝 Task Details & Management
+<img src="public/task-details.png" alt="Task Details" width="800" />
 
-Activity Tracking - Monitor task progress
+### 🛡️ Admin Panel & Statistics
+<img src="public/manage-users.png" alt="Manage Users" width="800" />
+<img src="public/manage-tasks.png" alt="Manage Tasks" width="800" />
+<img src="public/statistics.png" alt="Admin Statistics" width="800" />
+<img src="public/profile.png" alt="Profile Settings" width="800" />
 
-👥 Role-Based Permissions
-Feature	User	Moderator	Admin
-View own tasks	✅	✅	✅
-View all tasks	❌	✅	✅
-Create tasks	✅	✅	✅
-Edit own tasks	✅	✅	✅
-Edit all tasks	❌	✅	✅
-Delete tasks	❌	❌	✅
-Assign tasks	❌	✅	✅
-Manage users	❌	❌	✅
-View user list	❌	✅	✅
-Manage boards	✅	✅	✅
-🚀 Tech Stack
-Frontend
-React 18 - UI Framework
+---
 
-Redux Toolkit - State Management
+## ✨ Features (Detailed)
 
-React Router v6 - Routing
+### 👤 Role-Based Access Control (RBAC)
+- **Super Admin / Admin**: Complete access to the platform. Can manage users (change roles, deactivate, delete), view all tasks, manage boards, and view system statistics.
+- **Moderator**: Can manage tasks, view users, and moderate content.
+- **User**: Can create personal boards, manage tasks, assign tasks, and collaborate with team members.
 
-Tailwind CSS - Styling
+### 📌 Kanban Board System
+- Create multiple boards with custom titles and descriptions.
+- Visual workflow using Drag & Drop functionality.
+- Default columns: **To Do**, **In Progress**, **Review**, and **Done**.
+- Track board members and creation dates.
 
-React DnD - Drag & Drop
+### 📝 Task Management
+- Create tasks with title, description, and due date.
+- Assign priority levels: **Low**, **Medium**, **High**, **Urgent**.
+- Assign tasks to specific team members.
+- Categorize tasks (e.g., Work, Personal, etc.).
+- Upload and manage file attachments for tasks.
+- View detailed task history (Created by, Assigned to).
 
-Axios - API Calls
+### 📊 Admin Dashboard & Statistics
+- Overview of Total Tasks, Completed Tasks, Pending Tasks, and Completion Rate.
+- Visual analytics for **Priority Distribution** (Low, Medium, High, Urgent).
+- Visual analytics for **Category Distribution**.
+- User performance tracking (tasks assigned and completed).
+- Manage all users directly from the admin panel.
 
-React Hot Toast - Notifications
+### 🔒 Security & Authentication
+- Secure login and registration system.
+- Protected API routes using JWT (JSON Web Tokens).
+- Profile management with editable personal information and secure passwords.
 
-Backend
-Node.js - Runtime
+---
 
-Express - Web Framework
+## 🛠️ Tech Stack
 
-MongoDB - Database
+### Frontend
+- **React.js (Vite)** - UI Library
+- **Tailwind CSS** - Styling & Responsive Design
+- **React Router DOM** - Client-side Routing
+- **Axios** - API Requests
+- **React Hot Toast** - Notifications
 
-Mongoose - ODM
+### Backend
+- **Node.js + Express.js** - Server & REST API
+- **MongoDB & Mongoose** - Database
+- **JWT (JSON Web Tokens)** - Authentication
+- **Bcrypt.js** - Password Hashing
+- **Multer** - File Uploads (Task Attachments)
 
-JWT - Authentication
+### DevOps & Deployment
+- **Docker & Docker Compose** - Containerization
+- **GitHub Actions** - CI/CD (if configured)
 
-Cloudinary - Image/File Upload
+---
 
-Multer - File Handling
+## 📁 Project Structure
 
-📦 Installation
-Prerequisites
-Node.js (v16 or higher)
-
-MongoDB (local or Atlas)
-
-npm or yarn
-
-Clone the Repository
-bash
-git clone https://github.com/yourusername/taskflow.git
-cd taskflow
-Backend Setup
-bash
-# Navigate to server
-cd server
-
-# Install dependencies
-npm install
-
-# Create .env file
-cp .env.example .env
-
-# Update .env with your values
-# MONGODB_URI, JWT_SECRET, CLOUDINARY_*, etc.
-
-# Start development server
-npm run dev
-Frontend Setup
-bash
-# Navigate to client
-cd client
-
-# Install dependencies
-npm install
-
-# Create .env file
-cp .env.example .env
-
-# Update .env with your API URL
-# VITE_API_URL=http://localhost:5000/api
-
-# Start development server
-npm run dev
-Environment Variables
-Server .env
-
-env
-PORT=5000
-MONGODB_URI=mongodb://localhost:27017/taskflow
-JWT_SECRET=your-super-secret-jwt-key
-CLOUDINARY_CLOUD_NAME=your-cloud-name
-CLOUDINARY_API_KEY=your-api-key
-CLOUDINARY_API_SECRET=your-api-secret
-NODE_ENV=development
-Client .env
-
-env
-VITE_API_URL=http://localhost:5000/api
-🏗️ Project Structure
-text
+```text
 taskflow/
-├── server/
-│   ├── config/
-│   │   ├── db.js
-│   │   └── cloudinary.js
-│   ├── models/
-│   │   ├── User.js
-│   │   ├── Task.js
-│   │   └── Board.js
-│   ├── middleware/
-│   │   └── auth.js
-│   ├── controllers/
-│   │   ├── authController.js
-│   │   ├── taskController.js
-│   │   └── boardController.js
-│   ├── routes/
-│   │   ├── authRoutes.js
-│   │   ├── taskRoutes.js
-│   │   └── boardRoutes.js
-│   ├── .env
-│   └── server.js
-├── client/
+├── client/                  # React Frontend
+│   ├── public/              # Static assets & Screenshots
 │   ├── src/
-│   │   ├── api/
-│   │   │   ├── axios.js
-│   │   │   ├── auth.js
-│   │   │   ├── tasks.js
-│   │   │   └── board.js
-│   │   ├── components/
-│   │   │   ├── auth/
-│   │   │   ├── common/
-│   │   │   ├── board/
-│   │   │   └── dashboard/
-│   │   ├── pages/
-│   │   │   ├── Admin/
-│   │   │   ├── Moderator/
-│   │   │   ├── Home.jsx
-│   │   │   ├── Login.jsx
-│   │   │   ├── Register.jsx
-│   │   │   ├── Dashboard.jsx
-│   │   │   ├── Board.jsx
-│   │   │   ├── Tasks.jsx
-│   │   │   ├── TaskDetail.jsx
-│   │   │   ├── CreateTask.jsx
-│   │   │   ├── EditTask.jsx
-│   │   │   └── Profile.jsx
-│   │   ├── redux/
-│   │   │   ├── store.js
-│   │   │   ├── hooks.js
-│   │   │   └── slices/
-│   │   │       ├── authSlice.js
-│   │   │       ├── taskSlice.js
-│   │   │       ├── boardSlice.js
-│   │   │       └── uiSlice.js
-│   │   ├── hooks/
-│   │   │   ├── useAuth.js
-│   │   │   ├── useTask.js
-│   │   │   └── useBoard.js
-│   │   ├── App.jsx
-│   │   ├── main.jsx
-│   │   └── index.css
-│   ├── index.html
-│   ├── package.json
-│   ├── vite.config.js
-│   └── tailwind.config.js
-├── package.json
+│   │   ├── components/      # Reusable UI (Navbar, Sidebar, Modals)
+│   │   ├── pages/           # Home, Dashboard, Board, Admin, Profile
+│   │   ├── store/           # State Management (Redux/Context)
+│   │   ├── utils/           # API calls, helpers
+│   │   └── App.jsx
+│   ├── .env                 # Frontend Environment Variables
+│   └── package.json
+├── server/                  # Node.js Backend
+│   ├── config/              # DB connection
+│   ├── controllers/         # Auth, Tasks, Boards, Users, Stats
+│   ├── middleware/          # Auth & Role checks
+│   ├── models/              # MongoDB Schemas (User, Task, Board)
+│   ├── routes/              # API Endpoints
+│   ├── .env                 # Backend Environment Variables
+│   ├── Dockerfile
+│   └── package.json
+├── .github/                 # GitHub Actions workflows
+├── docker-compose.yml       # Multi-container setup
 └── README.md
-🔐 API Routes
-Authentication
-Method	Endpoint	Description
-POST	/api/auth/register	Register new user
-POST	/api/auth/login	Login user
-GET	/api/auth/me	Get current user
-PUT	/api/auth/profile	Update profile
-PUT	/api/auth/password	Change password
-POST	/api/auth/avatar	Upload avatar
-Tasks
-Method	Endpoint	Description
-GET	/api/tasks	Get all tasks
-GET	/api/tasks/board	Get tasks by status
-GET	/api/tasks/:id	Get single task
-POST	/api/tasks	Create task
-PUT	/api/tasks/:id	Update task
-PUT	/api/tasks/position	Update task position
-DELETE	/api/tasks/:id	Delete task
-POST	/api/tasks/:id/comments	Add comment
-POST	/api/tasks/:id/attachments	Upload attachment
-Boards
-Method	Endpoint	Description
-GET	/api/boards	Get all boards
-GET	/api/boards/:id	Get single board
-POST	/api/boards	Create board
-PUT	/api/boards/:id	Update board
-DELETE	/api/boards/:id	Delete board
-GET	/api/boards/:id/tasks	Get board tasks
-POST	/api/boards/:id/members	Add member
-DELETE	/api/boards/:id/members/:userId	Remove member
-🎯 Usage Guide
-Getting Started
-Register/Sign Up
+⚡ Installation & Setup
+1. Clone the Repository
+bash
+git clone https://github.com/missionkuamar/TaskFlow.git
+cd TaskFlow
+2. Backend Setup (server folder)
+bash
+cd server
+npm install
+Create a .env file in the server folder and add the following variables:
 
-First user becomes Admin automatically
+env
+# Server Configuration
+PORT=5000
+NODE_ENV=development
 
-Subsequent users become regular users
+# Database
+MONGODB_URI=mongodb://localhost:27017/taskflow
 
-Create a Board
+# Authentication
+JWT_SECRET=your_super_secret_jwt_key
 
-Navigate to /board
+# URL Configuration
+CLIENT_URL=http://localhost:5173
+Start the backend server:
 
-Click "Create Board"
+bash
+npm run dev
+3. Frontend Setup (client folder)
+Open a new terminal and navigate to the client folder:
 
-Add a name and description
+bash
+cd client
+npm install
+Create a .env file in the client folder and add the following variables:
 
-Add Tasks
+env
+# API & Backend URLs
+VITE_API_URL=http://localhost:5000/api
+VITE_BACKEND_URL=http://localhost:5000
+Start the frontend server:
 
-Open a board
+bash
+npm run dev
+4. Access the Application
+Open your browser and visit: http://localhost:5173
 
-Click "Add Task"
+🔑 Environment Variables Explained
+Yahan dono .env files ke variables ka detail diya gaya hai:
 
-Fill in task details
+🖥️ Server .env Variables
+Variable	Description	Example
+PORT	The port on which the backend server runs.	5000
+NODE_ENV	Environment mode (development/production).	development
+MONGODB_URI	Your MongoDB connection string (Local or Atlas).	mongodb://localhost:27017/taskflow
+JWT_SECRET	Secret key used to sign JWT authentication tokens.	your_super_secret_key
+CLIENT_URL	URL of the frontend (for CORS configuration).	http://localhost:5173
+💻 Client .env Variables
+Variable	Description	Example
+VITE_API_URL	The base URL for all API requests (includes /api).	http://localhost:5000/api
+VITE_BACKEND_URL	The base URL for the backend server (without /api).	http://localhost:5000
+🔌 API Endpoints (Overview)
+Authentication (/api/auth)
+text
+POST   /api/auth/register      - Register a new user
+POST   /api/auth/login         - Login user & get token
+GET    /api/auth/profile       - Get logged-in user profile
+PUT    /api/auth/profile       - Update user profile
+Boards (/api/boards)
+text
+GET    /api/boards             - Get all user boards
+POST   /api/boards             - Create a new board
+GET    /api/boards/:id         - Get single board details
+PUT    /api/boards/:id         - Update board
+DELETE /api/boards/:id         - Delete a board
+Tasks (/api/tasks)
+text
+GET    /api/tasks              - Get all tasks (Admin view)
+POST   /api/tasks              - Create a new task
+GET    /api/tasks/:id          - Get task details
+PUT    /api/tasks/:id          - Update task (status, priority, etc.)
+DELETE /api/tasks/:id          - Delete task
+Admin (/api/admin)
+text
+GET    /api/admin/users        - Get all users
+PUT    /api/admin/users/:id    - Update user role
+DELETE /api/admin/users/:id    - Delete a user
+GET    /api/admin/stats        - Get platform statistics
+🐳 Running with Docker
+If you prefer to run the project using Docker, follow these steps:
 
-Assign to a user
-
-Drag & Drop
-
-Drag tasks between columns
-
-Tasks automatically update status
-
-Manage Users (Admin/Moderator)
-
-Admin: Full user management
-
-Moderator: View and manage regular users
-
-🛡️ Security Features
-JWT Authentication
-
-Password Hashing (bcrypt)
-
-Role-Based Access Control
-
-Protected Routes
-
-Input Validation
-
-XSS Protection
-
-CORS Configuration
-
-📱 Responsive Design
-Fully responsive across all devices
-
-Mobile-first approach
-
-Optimized for tablets and phones
+bash
+# Ensure Docker Desktop is running
+docker-compose up --build
+This will start both the frontend and backend containers. Access the app at http://localhost:5173.
 
 🚀 Deployment
-Deploy Backend (Render)
-bash
-# Create render.yaml
-services:
-  - type: web
-    name: taskflow-api
-    runtime: node
-    buildCommand: npm install
-    startCommand: node server.js
-    envVars:
-      - key: MONGODB_URI
-        sync: false
-      - key: JWT_SECRET
-        sync: false
-Deploy Frontend (Vercel)
-bash
-cd client
-npm run build
-vercel --prod
-🤝 Contributing
-Fork the repository
+Backend (Render / Railway)
+Push your code to GitHub.
 
-Create your feature branch (git checkout -b feature/AmazingFeature)
+Connect your repository to Render.
 
-Commit your changes (git commit -m 'Add some AmazingFeature')
+Add all the server .env variables in the Render dashboard.
 
-Push to the branch (git push origin feature/AmazingFeature)
+Set Build Command: npm install and Start Command: npm start.
 
-Open a Pull Request
+Frontend (Vercel / Netlify)
+Run npm run build in the client folder.
 
+Deploy the dist folder to Vercel/Netlify.
+
+Add all the client .env variables in the deployment dashboard.
+
+Ensure the VITE_API_URL points to your live backend URL.
+
+📦 Key Dependencies
+Backend:
+
+text
+express, mongoose, bcryptjs, jsonwebtoken,
+cors, dotenv, multer
+Frontend:
+
+text
+react, react-router-dom, axios, tailwindcss, react-hot-toast
 📄 License
-This project is licensed under the MIT License.
+MIT License
 
-🙏 Acknowledgments
-React DnD for drag & drop functionality
+👨‍💻 Author
+Mission Kumar
 
-Tailwind CSS for styling
+GitHub: @missionkuamar
 
-Cloudinary for file hosting
+Repository: TaskFlow
 
-All open-source contributors
+⭐ Star this repository if you found it helpful!
 
-📞 Support
-For support, email support@taskflow.com or create an issue in the repository.
+text
 
-Made with ❤️ by Mission Kumar
+---
+**Aapka folder structure bahut clean hai!** Jaisa aapne `.github`, `docker-compose.yml`, aur `.env` files rakhi hain, usse pata chalta hai ki project production-ready hai. Agar aapko GitHub Actions (CI/CD) ka koi specific setup bhi add karna ho README mein, toh bata dena!
