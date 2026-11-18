@@ -20,6 +20,9 @@ A powerful, collaborative task management platform designed for teams and indivi
 ### 📊 User Dashboard & Boards
 <img src="public/dashboard.png" alt="User Dashboard" width="800" />
 <img src="public/boards.png" alt="My Boards" width="800" />
+<img src="public/kanbanboard.png" alt="My Boards" width="800" />
+
+
 <img src="public/kanban-board.png" alt="Kanban Board View" width="800" />
 
 ### 📝 Task Details & Management
